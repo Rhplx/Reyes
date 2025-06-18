@@ -1,0 +1,61 @@
+---
+import Facebook from "@icons/facebook.png";
+import LinkedIn from "@icons/linkedin.png";
+import { Image } from "astro:assets";
+---
+
+<section class="footer">
+  <div class="footer__container">
+    <div class="footer__row">
+      <h5 class="footer__title">Químicos Los Reyes</h5>
+      <div class="footer__socials">
+        <a
+          href="https://www.facebook.com/QuimicosLosReyes"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__social-link"
+        >
+          <Image src={Facebook} alt="facebook" class="footer__social-icon" />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/quimicoslosreyes/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__social-link"
+        >
+          <Image src={LinkedIn} alt="facebook" class="footer__social-icon" />
+        </a>
+      </div>
+    </div>
+    <p class="footer__credits">
+      © 2023 Químicos Los Reyes. Todos los derechos reservados.
+    </p>
+    <p class="footer__credits">
+      Hecho con <span class="footer__heart">❤️</span> por <a
+        href=""
+        target="_blank"
+        rel="noopener noreferrer">AxolotlCode.tech</a
+      >
+    </p>
+  </div>
+</section>
+
+<style lang="scss">
+  @reference '@styles/global';
+
+  .footer {
+    @apply bg-background text-white py-8;
+    &__container {
+      @apply text-center max-w-7xl mx-auto px-4;
+    }
+    &__row {
+      @apply flex justify-between items-center mb-6;
+    }
+    &__social-link {
+      @apply no-underline;
+    }
+    &__credits {
+      @apply text-[10px] text-gray-400;
+    }
+  }
+</style>

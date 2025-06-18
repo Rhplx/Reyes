@@ -1,0 +1,137 @@
+---
+import LocationIcon from "@icons/location.png";
+import PhoneIcon from "@icons/phone-2.png";
+import EmailIcon from "@icons/email.png";
+import ClockIcon from "@icons/clock.png";
+import { Image } from "astro:assets";
+---
+
+<section class="contact">
+  <div class="contact__container">
+    <h1 class="contact__title">Contáctanos</h1>
+    <p class="contact__description">
+      Estamos aquí para ayudarte. Si tienes alguna pregunta o necesitas más
+      información, no dudes en contactarnos.
+    </p>
+    <div class="contact__wrapper">
+      <div class="contact__form-container">
+        <form class="contact__form">
+          <h2 class="contact__form-title">Envianos un mensaje</h2>
+          <input
+            type="text"
+            placeholder="Nombre"
+            class="contact__input"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Correo Electrónico"
+            class="contact__input"
+            required
+          />
+          <textarea placeholder="Mensaje" class="contact__textarea" required
+          ></textarea>
+          <button type="submit" class="contact__button">Enviar</button>
+        </form>
+      </div>
+      <div class="contact__location">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789012!2d-122.419415684681!3d37.774929279759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sSan%20Francisco%20City%20Hall!5e0!3m2!1sen!2sus!4v1616161616161"
+          width="100%"
+          height="150"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"></iframe>
+        <article class="contact__location-info">
+          <Image
+            src={LocationIcon}
+            alt="icono de localizacion"
+            class="contact__location-icon"
+          />
+          <span>
+            <h5 class="contact__location-info-title">Dirección</h5>
+            <p class="contact__location-info-description">
+              Calle sin numero 12345
+            </p>
+          </span>
+        </article>
+        <article class="contact__location-info">
+          <Image
+            src={PhoneIcon}
+            alt="icono de telefono"
+            class="contact__location-icon"
+          />
+          <span>
+            <h5 class="contact__location-info-title">Telefono</h5>
+            <p class="contact__location-info-description">+342343423</p>
+          </span>
+        </article>
+        <article class="contact__location-info">
+          <Image
+            src={EmailIcon}
+            alt="icono de correo"
+            class="contact__location-icon"
+          />
+          <span>
+            <h5 class="contact__location-info-title">Correo</h5>
+            <p class="contact__location-info-description">
+              contacto@quimicoslosreyes.com
+            </p>
+          </span>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @reference '@styles/global';
+
+  .contact {
+    @apply py-16;
+
+    &__container {
+      @apply text-center max-w-7xl mx-auto px-4;
+    }
+    &__title {
+      @apply text-2xl font-bold mb-5 text-pretty lg:text-4xl;
+    }
+    &__description {
+      @apply text-lg mb-10 text-pretty lg:text-2xl;
+    }
+    &__wrapper {
+      @apply flex flex-col sm:flex-row items-center justify-between gap-8;
+    }
+    &__form-container {
+      @apply flex-1;
+    }
+    &__form {
+      @apply bg-gray-300 py-10 px-5;
+    }
+    &__form-title {
+      @apply text-left text-xl font-bold mb-4 text-pretty lg:text-2xl;
+    }
+    &__input,
+    &__textarea {
+      @apply w-full mb-4 p-2 border border-gray-400 rounded my-2;
+    }
+    &__button {
+      @apply bg-primary text-white w-full p-2 rounded-lg text-sm lg:text-xl lg:px-5;
+    }
+    &__location {
+      @apply flex-1;
+    }
+    &__location-info {
+      @apply flex items-center justify-baseline text-left gap-4 mt-4;
+    }
+    &__location-icon {
+      @apply w-8 h-10;
+    }
+    &__location-info-title {
+      @apply text-sm font-bold text-pretty;
+    }
+    &__location-info-description {
+      @apply text-xs text-gray-700;
+    }
+  }
+</style>

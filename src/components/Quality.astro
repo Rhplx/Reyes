@@ -1,0 +1,64 @@
+---
+import StarIcon from "@icons/star.png";
+import ShieldIcon from "@icons/shield.png";
+import CarIcon from "@icons/car.png";
+import SupportIcon from "@icons/headphones.png";
+import { Image } from "astro:assets";
+---
+
+<section class="quality">
+  <div class="quality__container">
+    <h1 class="quality__title">Calidad y seguridad primero</h1>
+    <p class="quality__description">
+      Todos nuestros productos cumplen con los estándares internacionales de
+      calidad, acompañados de documentación de seguridad completa y soporte
+      técnico especializado.
+    </p>
+    <div class="quality__cards">
+      <article class="quality__card">
+        <Image src={StarIcon} alt="icono ISO" class="quality__icon" />
+        <p class="quality__card-text">Certificado ISO</p>
+      </article>
+      <article class="quality__card">
+        <Image src={ShieldIcon} alt="icono seguridad" class="quality__icon" />
+        <p class="quality__card-text">Estandares de Seguridad</p>
+      </article>
+      <article class="quality__card">
+        <Image src={CarIcon} alt="icono envio" class="quality__icon" />
+        <p class="quality__card-text">Envio Rapido</p>
+      </article>
+      <article class="quality__card">
+        <Image src={SupportIcon} alt="icono soporte" class="quality__icon" />
+        <p class="quality__card-text">Soporte Experto</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @reference '@styles/global';
+  .quality {
+    @apply py-16 bg-background text-white;
+    &__container {
+      @apply text-center max-w-7xl mx-auto px-4;
+    }
+    &__title {
+      @apply text-2xl font-bold mb-5 text-pretty lg:text-4xl;
+    }
+    &__description {
+      @apply text-lg mb-10 text-pretty lg:text-2xl;
+    }
+    &__cards {
+      @apply flex items-stretch justify-around flex-wrap  gap-10;
+    }
+    &__card {
+      @apply w-full max-w-[45%] sm:max-w-1/5;
+    }
+    &__icon {
+      @apply mb-3;
+    }
+    &__card-text {
+      @apply text-pretty text-lg font-bold;
+    }
+  }
+</style>
