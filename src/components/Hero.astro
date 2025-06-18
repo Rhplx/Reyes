@@ -1,0 +1,75 @@
+---
+import HeroImage from "@images/hero.jpg";
+import { Image } from "astro:assets";
+import Book from "@icons/book.png";
+import Phone from "@icons/phone.png";
+---
+
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__text">
+      <h1 class="hero__title">
+        Soluciones <span class="hero__title--red">Químicas</span> Avanzadas
+      </h1>
+      <p class="hero__paragraph">
+        Proveedor líder de productos químicos de alta calidad. Sirviendo a
+        industrias en todo el mundo con precisión, seguridad e innovación.
+      </p>
+      <span class="hero__cta">
+        <a href="#" class="hero__primary-cta">
+          <Image src={Book} alt="conoce más" /> Conoce más
+        </a>
+        <a href="#" class="hero__secondary-cta">
+          <Image src={Phone} alt="Contactanos" /> Contactanos
+        </a>
+      </span>
+    </div>
+    <div class="hero__image-container">
+      <Image src={HeroImage} alt="Imagen de frascos" class="hero__image" />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @reference '@styles/global';
+
+  .hero {
+    @apply bg-background text-white py-10 -mt-1;
+    &__container {
+      @apply flex flex-col justify-between items-center max-w-7xl mx-auto sm:flex-row;
+    }
+    &__text {
+      @apply flex flex-col w-full p-8 text-center sm:w-1/2 sm:text-left;
+    }
+    &__title {
+      @apply text-3xl font-bold mb-4 text-pretty lg:text-6xl;
+
+      &--red {
+        @apply text-primary;
+      }
+    }
+    &__paragraph {
+      @apply text-lg mb-8 lg:text-2xl;
+    }
+
+    &__image-container {
+      @apply w-full sm:w-1/2;
+    }
+    &__image {
+      @apply w-full h-auto shadow-lg;
+    }
+    &__cta {
+      @apply flex flex-col gap-4 lg:flex-row lg:justify-start;
+    }
+    &__primary-cta,
+    &__secondary-cta {
+      @apply flex items-center justify-center no-underline gap-2 p-2 rounded-lg text-sm lg:text-xl lg:px-5;
+    }
+    &__primary-cta {
+      @apply bg-primary text-white;
+    }
+    &__secondary-cta {
+      @apply bg-transparent text-primary border border-primary;
+    }
+  }
+</style>

@@ -1,0 +1,55 @@
+---
+import AboutCard from "./AboutCard.astro";
+import WashingIcon from "@icons/washing.png";
+import BottleIcon from "@icons/bottle.png";
+import CleaningIcon from "@icons/cleaning.png";
+---
+
+<section class="about">
+  <div class="about__container">
+    <h2 class="about__title">Sobre Nosotros</h2>
+    <p class="about__description">
+      En Quimicos Los Reyes, nos dedicamos a la fabricación y desarrollo de
+      productos químicos de alta calidad para el cuidado personal y la higiene.
+      Nuestra línea incluye jabones, shampoos y mascarillas personalizadas para
+      distintas industrias, con un firme compromiso con la innovación, la
+      eficiencia y el bienestar de nuestros clientes.
+    </p>
+    <div class="about__cards">
+      <AboutCard
+        image={CleaningIcon}
+        title="Jabón Corporal"
+        text="El jabón corporal limpia en profundidad mientras mantiene la hidratación natural de la piel. Su fórmula cremosa y suave es ideal para todo tipo de piel, incluso la sensible."
+      />
+      <AboutCard
+        image={WashingIcon}
+        title="Mascarilla Capilar"
+        text="Formulada para revitalizar cabellos secos, maltratados o teñidos, nuestra mascarilla capilar repara desde la raíz hasta las puntas. Restaura el brillo, la suavidad y la elasticidad natural del cabello."
+      />
+      <AboutCard
+        image={BottleIcon}
+        title="Jalea Fijadora"
+        text="Nuestra jalea capilar está formulada para ofrecer fijación media a fuerte sin resecar ni maltratar el cabello. Ideal para definir peinados y mantener el control con un acabado natural y brillante."
+      />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @reference '@styles/global';
+  .about {
+    @apply py-16;
+    &__container {
+      @apply text-center max-w-7xl mx-auto px-4;
+    }
+    &__title {
+      @apply text-2xl font-bold mb-10 text-pretty lg:text-4xl;
+    }
+    &__description {
+      @apply text-lg mb-10 text-pretty lg:text-2xl;
+    }
+    .about__cards {
+      @apply flex items-stretch justify-center flex-wrap  gap-8;
+    }
+  }
+</style>

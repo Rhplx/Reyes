@@ -1,3 +1,6 @@
+---
+import '@fontsource-variable/inter';
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +8,29 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Quimicos Los Reyes</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		font-family: 'Inter Variable', sans-serif;
+	}
+	* {
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+	}
+	button {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
 	}
 </style>

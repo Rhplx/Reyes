@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import Logo from "@images/logo.png";
+import Menu from "@icons/menu.png";
+---
+
+<nav class="header">
+  <div class="header__container">
+    <Image src={Logo} alt="Logo Los Reyes" class="header__logo" />
+    <ul class="header__menu">
+      <li class="header__item">Sobre nosotros</li>
+      <li class="header__item">Productos</li>
+      <li class="header__item">Contacto</li>
+    </ul>
+    <button class="header__menu-button">
+      <Image src={Menu} alt="icono de menu" class="header__icon" />
+    </button>
+  </div>
+</nav>
+
+<style lang="scss">
+  @reference '@styles/global';
+  .header {
+    @apply bg-background;
+    &__container {
+      @apply flex justify-between items-center py-4 px-4 max-w-7xl mx-auto;
+    }
+    &__logo {
+      @apply w-16 h-16 sm:w-28 sm:h-28;
+    }
+    &__menu {
+      @apply hidden justify-center gap-5 list-none sm:flex;
+    }
+    &__item {
+      @apply text-white;
+    }
+    &__menu-button {
+      @apply flex sm:hidden;
+    }
+    &__icon {
+      @apply w-5 h-5 sm:w-10 sm:h-10;
+    }
+  }
+</style>
